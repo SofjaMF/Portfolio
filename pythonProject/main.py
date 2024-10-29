@@ -1,16 +1,40 @@
-# This is a sample Python script.
+import cgi
+from email.message import EmailMessage
+import ssl
+import smtplib
+from email.mime.multipart import MIMEMultipart
+from email.mime.text import MIMEText
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+form = cgi.FieldStorage()
+user_email = form.getvalue("email")
+user_message = form.getvalue("message")
+
+email_sender = 'sofja.mf@gmail.com'
+email_password = 'kisi eljh ywkv uahc'
+email_receiver = 'sofja.mf@gmail.com'
 
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+subject = 'something'
+body = """
+hope that it will work
+"""
+
+message = MIMEMultipart()
+message["From"] = email_sender
+message["To"] = email_receiver
+message["Subject"] = f"New message from {user_email}"
+
+body = f"Message from {user_email}:\n\n{user_message}"
+message.attach(MIMEText(body, "plain"))
 
 
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+try:
+    with smtplib.SMTP("smtp.gmail.com", 587) as server:
+        server.starttls()  # Secure the connection
+        server.login(email_sender, email_password)
+        server.sendmail(email_sender, email_receiver, message.as_string())
+    print("Content-Type: text/html\n")
+    print("<html><body><h1>Email sent successfully!</h1></body></html>")
+except Exception as e:
+    print("Content-Type: text/html\n")
+    print(f"<html><body><h1>Failed to send email. Error: {e}</h1></body></html>")
