@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script src="https://www.google.com/recaptcha/api.js?render=6LeCmXAqAAAAAHxfUbHDFub45Ky-QsArzic7Gjwo"></script>
+    <script>
+        grecaptcha.ready(function() {
+            grecaptcha.execute('6LeCmXAqAAAAAHxfUbHDFub45Ky-QsArzic7Gjwo', {action: 'submit'}).then(function(token) {
+                document.getElementById('g-recaptcha-response').value = token;
+            });
+        });
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mans portfolio</title>
+
+    <style>
+        body {background-color: #D2DCE6;}
+        h1   {color: #401B1B;}
+        p    {color: #72383D;}
+    </style>
+
+</head>
+<body>
+    <header>
+        <h1>Portfolio</h1>
+    </header>
+
+    <section>
+        <h2 style="color:blue;"> Par mani</h2>
+        <p>Pašlaik mācos RTU inženierzinātņu vidusskolas 11. klasē.</p>
+    </section>
+
+    <section>
+        <h2>Projekti</h2>
+        <ul>
+            <li><a href="https://github.com/SofjaMF/Portfolio">Apskatiet manu portfolio</a></li>
+          </ul>
+        <p>pagaidām nav</p>
+    </section> 
+
+    <h2>Kontakti</h2>
+    <section id="contact">
+        <form action="/send_email" method="POST">
+            <label for="email">E-mail:</label><br>
+            <input type="email" id="email" name="email" required><br><br>
+            
+            <label for="message">Ziņa:</label><br>
+            <textarea id="message" name="message" rows="5" required></textarea><br><br>
+            
+            <input type="hidden" id="g-recaptcha-response" name="g-recaptcha-response">
+
+            <input type="submit" value="Submit">
+        </form>
+    </section>
+</body>
+</html>
