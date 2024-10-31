@@ -35,7 +35,6 @@ def send_email():
         recaptcha_result= recaptcha_request.json()
 
         print(recaptcha_result)
-        #print(recaptcha_result['score'])
 
         if recaptcha_result['success'] == True and recaptcha_result['score'] >= 0.5:
 

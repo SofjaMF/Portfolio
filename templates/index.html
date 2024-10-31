@@ -13,12 +13,88 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>mans portfolio</title>
+    <title>Portfolio</title>
 
     <style>
-        body {background-color: #D2DCE6;}
-        h1   {color: #401B1B;}
-        p    {color: #72383D;}
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #F0F4F8;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+      
+        h1 {
+            color: #401B1B;
+        }
+
+        h2 {
+            color: #444;
+        }
+        header {
+            background-color: #401B1B;
+            width: 100%;
+            padding: 1rem 0;
+            text-align: center;
+            color: #fff;
+        }
+        section {
+            width: 90%;
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        section h2 {
+            color: #3366cc;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        ul li a {
+            text-decoration: none;
+            color: #3366cc;
+        }
+        #contact form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        #contact label {
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        #contact input[type="email"],
+        #contact textarea {
+            width: 100%;
+            padding: 8px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        #contact input[type="submit"] {
+            background-color: #401B1B;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+
+        #contact input[type="submit"]:hover {
+            background-color: #72383D;
+        }
     </style>
 
 </head>
@@ -28,7 +104,7 @@
     </header>
 
     <section>
-        <h2 style="color:blue;"> Par mani</h2>
+        <h2>Par mani</h2>
         <p>Pašlaik mācos RTU inženierzinātņu vidusskolas 11. klasē.</p>
     </section>
 
@@ -37,7 +113,7 @@
         <ul>
             <li><a href="https://github.com/SofjaMF/Portfolio">Apskatiet manu portfolio</a></li>
           </ul>
-        <p>pagaidām nav</p>
+        <p>Citu projektu pagaidām nav</p>
     </section> 
 
     <h2>Kontakti</h2>
